@@ -2,12 +2,12 @@
 
 
 ##
-`user => (load-file "racket.clj")`
-`user => (repl)`
+- `user => (load-file "racket.clj")`
+- `user => (repl)`
  -  `(enter! "demo.rkt")`
 
  -  `(enter! "jarras.rkt")` 
-   * (breadth-first bc)
+            * (breadth-first bc)
 
 
 ## Usage
