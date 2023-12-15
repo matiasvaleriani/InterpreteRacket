@@ -60,6 +60,7 @@
 (declare fnc-newline)
 (declare fnc-reverse)
 (declare fnc-mayor-o-igual)
+(declare fnc-caar)
 
 ; Funciones auxiliares
 
@@ -107,7 +108,7 @@
                'if 'if 'lambda 'lambda 'length 'length 'list 'list 'list? 'list?
                'newline 'newline 'nil (symbol "#f") 'not 'not 'null? 'null? 'or 'or 'quote 'quote
                'read 'read 'reverse 'reverse 'set! 'set! (symbol "#f") (symbol "#f")
-               (symbol "#t") (symbol "#t") '+ '+ '- '- '< '< '> '> '>= '>=) ""))
+               (symbol "#t") (symbol "#t") '+ '+ '- '- '< '< '> '> '>= '>= 'caar 'caar) ""))
   ([amb ns]
    (if (empty? ns) (print ns) (pr ns)) (print "> ") (flush)
    (try
@@ -227,6 +228,7 @@
     (= fnc '-)            (fnc-restar lae)
     (= fnc '>)            (fnc-mayor lae)
     (= fnc '>=)           (fnc-mayor-o-igual lae)
+    (= fnc 'caar)         (fnc-caar lae)
 
     :else (generar-mensaje-error :wrong-type-apply fnc)))
 
@@ -1232,6 +1234,22 @@
 			)
 		)
 	)
+)
+
+; ##### FUNCION AGREGADA PARA EL FINAL #####
+; > (caar '( (a b c) d (e) ) )
+; 'a
+; > (caar 1 2 3)  
+; ;ERROR: Wrong number of args given #<primitive-procedure caar>
+; > (caar 1)
+; ;ERROR: caar: Wrong type in arg 1
+(defn fnc-caar
+  "Devuelve el primer elemento del elemento de la primera posicion (deber ser una sublista)."
+  [lista]
+  (if (not= (count lista) 1) (generar-mensaje-error :wrong-number-args-prim-proc 'caar)
+  (if (not (seq? (first lista))) (generar-mensaje-error :wrong-type-arg 'caar (first lista)) 
+  (first (first (first lista))))  
+  )
 )
 
 ; Al terminar de cargar el archivo en el REPL de Clojure, se debe devolver true.
