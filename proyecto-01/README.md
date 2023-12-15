@@ -11,8 +11,7 @@
 
 ## Usage
 
-- To run interpreter:
--
+ To run interpreter:
 ```sh
 lein run
 (enter! "demo.rkt")
@@ -20,5 +19,5 @@ lein run
 (breadth-first bc)
 ```
 
-- To run tests: `lein test`
+ To run tests: `lein test`
 
