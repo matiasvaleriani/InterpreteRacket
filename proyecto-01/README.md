@@ -12,9 +12,9 @@
 ## Usage
 
 - To run interpreter: `lein run`
--  `(enter! "demo.rkt")`
--  `(enter! "jarras.rkt")` 
-- `(breadth-first bc)` 
+  `(enter! "demo.rkt")`
+ `(enter! "jarras.rkt")` 
+ `(breadth-first bc)` 
 
 - To run tests: `lein test`
 
