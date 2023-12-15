@@ -19,5 +19,8 @@ lein run
 (breadth-first bc)
 ```
 
- To run tests: `lein test`
+ To run tests: 
+ ```sh
+ lein test
+ ```
 
