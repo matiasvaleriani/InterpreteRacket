@@ -1,32 +1,33 @@
-# proyecto-01
+# Interpete de Racket en Clojure
+Trabajo Practico de **Lenguajes Formales (95.48)** de la **Facultad de Ingenieria de la Universidad de Buenos Aires** durante el **2C 2023**.
+El objetivo del presente trabajo es construir un intérprete de Racket que corra en la JVM (Java Virtual Machine). Por ello, el lenguaje elegido para su implementación es **Clojure**.
 
-FIXME: description
+## Ejecución desde Clojure
 
-## Installation
+Se necesita cargar el archivo `/src/proyecto_01/core.clj`
 
-Download from http://example.com/FIXME.
+```sh
+user => (load-file "core.clj")
+user => (repl)
+(enter! "demo.rkt")
+(enter! "jarras.rkt")
+(breadth-first bc)
+```
 
-## Usage
+## Ejecución desde Leiningen
 
-FIXME: explanation
+Correr interprete:
+```sh
+lein run
+(enter! "demo.rkt")
+(enter! "jarras.rkt")
+(breadth-first bc)
+```
 
-    $ java -jar proyecto-01-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+ Correr pruebas unitarias: 
+ ```sh
+ lein test
+ ```
 
 ## License
 
@@ -42,3 +43,4 @@ Public License, v. 2.0 are satisfied: GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or (at your
 option) any later version, with the GNU Classpath Exception which is available
 at https://www.gnu.org/software/classpath/license.html.
+
